@@ -1,8 +1,8 @@
 ## Identitas
 
-Nama: 
+Nama: Nadaa Az Zahra
 
-NIM : 
+NIM : 607062530005
 
 ## Instruksi
 
