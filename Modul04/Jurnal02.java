@@ -3,42 +3,36 @@ import java.util.Scanner;
 public class Jurnal02 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
-        int N = input.nextInt();
-        input.close();
+        Scanner scanner = new Scanner(System.in);
+        int bilangan = scanner.nextInt();
+        int bilanganJuta = bilangan * 1000000;
+        double persenPajak = 0;
+        int hitungPajak = 0;
+        int penghasilanBersih = 0;
 
-        if (N > 0 && N <= 50) {  
-            System.out.println("Penghasilan kotor = " + N + " juta Rupiah");
-            N *= 1000000;
-            int pajak = N * 5/100;
-            int hasilBersih = N - pajak;
-            System.out.println("Pajak 5% = Rp. " + pajak);
-            System.out.println("Penghasilan bersih = Rp. " + hasilBersih );
-
-        } else if (N >= 51 && N <= 250) {
-            System.out.println("Penghasilan kotor = " + N + " juta Rupiah");
-            N *= 1000000;
-            int pajak = N * 15/100;
-            int hasilBersih = N - pajak;
-            System.out.println("Pajak 15% = Rp. " + pajak);
-            System.out.println("Penghasilan bersih = Rp. " + hasilBersih);
-    
-        } else if (N >= 251 && N <= 500) {
-            System.out.println("Penghasilan kotor = " + N + " juta Rupiah");
-            N *= 1000000;
-            int pajak = N * 25/100;
-            int hasilBersih = N - pajak;
-            System.out.println("Pajak 25% = Rp. " + pajak);
-            System.out.println("Penghasilan bersih = Rp. " + hasilBersih);
-        
-        } else {
-            System.out.println("Penghasilan kotor = " + N + " juta Rupiah" );
-            N *= 1000000;
-            long pajak =(long) N * 30/100;
-            long hasilBersih =(long) N - pajak;
-            System.out.println("Pajak 30% = Rp. " + pajak);
-            System.out.println("Penghasilan bersih = Rp. " + hasilBersih);
-
+        if (bilangan >= 0 && bilangan <= 50) {
+            persenPajak = 0.05;
+            hitungPajak = (int) (bilanganJuta * persenPajak);
+            penghasilanBersih = bilanganJuta - hitungPajak;
+        } else if (bilangan >= 51 && bilangan <= 250) {
+            persenPajak = 0.15;
+            hitungPajak = (int) (bilanganJuta * persenPajak);
+            penghasilanBersih = bilanganJuta - hitungPajak;
+        } else if (bilangan >= 251 && bilangan <= 500) {
+            persenPajak = 0.25;
+            hitungPajak = (int) (bilanganJuta * persenPajak);
+            penghasilanBersih = bilangan - hitungPajak;
+        } else if (bilangan > 500) {
+            persenPajak = 0.3;
+            hitungPajak = (int) (bilanganJuta * persenPajak);
+            penghasilanBersih = bilanganJuta - hitungPajak;
         }
+        persenPajak = persenPajak * 100;
+        // int outputPajak = (int) (persenPajak);
+        System.out.println("Penghasilan kotor = " + bilangan + " juta Rupiah");
+        System.out.println("Pajak " + (int) persenPajak + "% = Rp. " + hitungPajak);
+        System.out.println("Penghasilan bersih = Rp. " + penghasilanBersih);
+
+        scanner.close();
     }
 }
