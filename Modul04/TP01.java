@@ -10,9 +10,9 @@ public class TP01 {
 
         //cek nilai N apakah kelipatan
         if (n % 6 == 0) {
-            System.out.println("Kelipatan Enam");
+            System.out.println("Kelipatan enam");
         } else {
-            System.out.println("Bukan Kelipatan Enam");
+            System.out.println("Bukan Kelipatan enam");
         }
 
 
