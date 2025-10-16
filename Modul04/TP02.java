@@ -1,22 +1,28 @@
 import java.util.Scanner;
+
 public class TP02 {
 
     public static void main(final String[] args) {
-         Scanner scanner = new Scanner(System.in);
-        int totalTransaksi = scanner.nextInt();
+        Scanner s = new Scanner(System.in);
 
-        double jumlahDiskon = 0.0;
-        if (totalTransaksi > 200000) {
-            jumlahDiskon = 0.05 * totalTransaksi;
+        int n = s.nextInt();
+
+        int diskon = 0;
+        if (n > 200000) {
+            diskon = n * 5 / 100;
         }
 
-        double totalSetelahDiskon = totalTransaksi - jumlahDiskon;
-        double pajakPpn = 0.11 * totalSetelahDiskon;
-        double totalPembayaran = totalSetelahDiskon + pajakPpn;
+        float Total = n - diskon;
+        float Ppn  = (Total * 0.11f);
+        float TotalBayar = (Total + Ppn);
 
-        System.out.println("Transaksi = " + totalTransaksi);
-        System.out.println("Total = " + totalTransaksi + " - " + jumlahDiskon);
-        System.out.println("Ppn 11% = " + pajakPpn);
-        System.out.println("Total dibayar = " + totalPembayaran);
+        System.out.println("Transaksi =" + " " + n);
+        if (diskon > 0) {
+            System.out.println("Total =" + " " + n + " " + "-" + " " + diskon);
+        } else{
+            System.out.println("Total =" + " " + n);
+        }
+        System.out.println("Ppn 11% =" + " " + Ppn);
+        System.out.println("Total dibayar =" + " " + TotalBayar);
     }
 }
