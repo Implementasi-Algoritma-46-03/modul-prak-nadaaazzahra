@@ -3,15 +3,27 @@ import java.util.Scanner;
 public class Jurnal03 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
-        int p = input.nextInt();
-        int a = input.nextInt();
-        int b = input.nextInt();
+        //input
+        int nilaiP = s.nextInt();
+        int nilaiA = s.nextInt();
+        int nilaiB = s.nextInt();
 
-        double na = (0.25 * p) + (0.35 * a) + (0.4 * b);
+        //proses hitung
+        double nilaiStatus =(0.25 * nilaiP) + (0.35 * nilaiA) + (0.4 * nilaiB);
+        
+        // proses ngecek
+        boolean MK = true;
+        if (nilaiStatus >= 75){
+            MK = true;
+        } else if (nilaiStatus < 75){
+            MK = false;
+        }
 
-        System.out.printf("%.2f%n", na);
-        System.out.println("Lulus MK: " + (na >= 75));
+        //output
+        System.out.printf("%.2f%n",nilaiStatus);
+        System.out.println("Lulus MK: " + MK);
     }
 }
+

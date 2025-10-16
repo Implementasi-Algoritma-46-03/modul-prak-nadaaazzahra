@@ -1,14 +1,19 @@
 import java.util.Scanner;
+
 public class TP01 {
-    public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+    public static void main(final String[] args) {
+        Scanner input = new Scanner (System.in);
 
-        int tabunganAwal = input.nextInt();
-        int tabunganHarian = input.nextInt();
-        int jumlahHari = input.nextInt();
-        int totalTabungan = tabunganAwal + (tabunganHarian * jumlahHari);
-        System.out.println(totalTabungan);
-        input.close();
+        //input 
+        int x = input.nextInt();
+        int y = input.nextInt();
+        int n = input.nextInt();
+
+        //proses
+        int total = x + (y * n);
+
+        //output
+        System.out.println(total);
     }
 }
