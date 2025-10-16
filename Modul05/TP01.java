@@ -1,50 +1,24 @@
 import java.util.Scanner;
 
 public class TP01 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String bulan = input.nextLine();
+        String bulanPerancis;
 
-    public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
-
-        String bulan = s.nextLine();
-
-        String prancis = "";
-        switch (bulan){
-            case "januari":
-            prancis = "janvier";break;
-
-            case "februari":
-            prancis = "fevrier";break;
-
-            case "maret":
-            prancis = "mars";break;
-
-            case "april":
-            prancis = "avril";break;
-
-            case "mei":
-            prancis = "mai";break;
-
-            case "juni":
-            prancis = "juin";break;
-
-            case "juli":
-            prancis = "juillet";break;
-
-            case "agustus":
-            prancis = "aout";break;
-
-            case "september":
-            prancis = "septembre";break;
-
-            case "oktober":
-            prancis = "oktobre";break;
-
-            case "november":
-            prancis = "novembre";break;
-
-            case "desember":
-            prancis = "decembre";break;
+        switch (bulan) {
+            case "januari": System.out.println ("janvier"); break;
+            case "februari": System.out.println ("fevrier"); break;
+            case "maret": System.out.println ("mars"); break;
+            case "april": System.out.println ("avril"); break;
+            case "mei": System.out.println ("mai"); break;
+            case "juni": System.out.println ("juin"); break;
+            case "juli": System.out.println ("juillet"); break;
+            case "agustus": System.out.println ("aout"); break;
+            case "september": System.out.println ("septembre"); break;
+            case "oktober": System.out.println ("oktobre"); break;
+            case "november": System.out.println ("novembre"); break;
+            case "desember": System.out.println ("decembre"); break;
         }
-        System.out.println(prancis);
-    }
+}
 }

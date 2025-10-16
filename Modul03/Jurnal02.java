@@ -1,20 +1,17 @@
 import java.util.Scanner;
 
 public class Jurnal02 {
-
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
+        // Kerjakan soalnya di sini
+        Scanner input = new Scanner(System.in);
 
-        //input
-        int nilaiA = s.nextInt();
-        int nilaiB = s.nextInt();
-        int nilaiC = s.nextInt();
+        int a = input.nextInt();
+        int b = input.nextInt();
+        int c = input.nextInt();
 
-        //proses
-        float nilaiRataRata = (nilaiA + nilaiB + nilaiC) / 3;
+        double rataRata = (a + b + c)/3.0;
 
-        //output
-        System.out.print("Nilai rata-rata: ");
-        System.out.printf("%.2f%n", nilaiRataRata);
+        System.out.printf("Nilai rata-rata: %.2f", rataRata);
+
     }
 }

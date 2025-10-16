@@ -1,40 +1,26 @@
 import java.util.Scanner;
 
 public class TP02 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N = input.nextInt();
 
-    public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
+        // hari = jumat (vendredi), indeks 4 dari total 7 hari
+        int hariIni = 4;
 
-        int bilBut = s.nextInt();
-        int hari = 5;
+        // hitung indeks hari ke-N setelah Jumat
+        int hariSetelah = (hariIni + N) % 7;
 
-        int hariKedepan = (hari + bilBut) % 7;
-        if (hariKedepan==0) hariKedepan = 7;
-        
-        String hariPrancis = "";
+        String hariPrancis;
 
-        switch (hariKedepan){
-            case 1 : 
-            hariPrancis = "lundi";break;
-
-            case 2 :
-            hariPrancis = "mardi";break;
-
-            case 3:
-            hariPrancis = "mercredi";break;
-
-            case 4:
-            hariPrancis = "jeudi";break;
-
-            case 5:
-            hariPrancis = "vendredi";break;
-
-            case 6:
-            hariPrancis = "samedi";break;
-
-            case 7:
-            hariPrancis = "dimanche";break;
+        switch (hariSetelah) {
+            case 0: System.out.println ("lundi"); break;     // senin
+            case 1: System.out.println ("mardi"); break;     // selasa
+            case 2: System.out.println ("mercredi"); break;  // rabu
+            case 3: System.out.println ("jeudi"); break;     // kamis
+            case 4: System.out.println ("vendredi"); break;  // jumat
+            case 5: System.out.println ("samedi"); break;    // sabtu
+            case 6: System.out.println ("dimanche"); break;  // minggu
         }
-        System.out.println(hariPrancis);
-    }
+}
 }

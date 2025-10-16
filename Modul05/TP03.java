@@ -1,48 +1,45 @@
 import java.util.Scanner;
 
 public class TP03 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String namaBangun = input.nextLine();
 
-    public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
+        double luas = 0;
+        double keliling = 0;
 
-        String bangunan = s.nextLine();
-        
-
-
-        switch (bangunan){
+        switch (namaBangun) {
             case "Persegi":
-            int sisi = s.nextInt();
-            int kelilingPersegi = 4 * sisi;
-            int luasPersegi = sisi * sisi;
-            System.out.print(luasPersegi);
-            System.out.println(" " + kelilingPersegi);break;
+                int sisi = input.nextInt();
+                luas = sisi * sisi;
+                keliling = 4 * sisi;
+                System.out.printf("%d %d", (int) luas, (int) keliling);
+                break;
 
             case "Persegi Panjang":
-            int panjang = s.nextInt();
-            int lebar = s.nextInt();
-            int kelilingPersegiP = 2 * (panjang + lebar);
-            int luasPersegiP = panjang * lebar;
-            System.out.print(luasPersegiP);
-            System.out.println(" " + kelilingPersegiP);break;
+                int panjang = input.nextInt();
+                int lebar = input.nextInt();
+                luas = panjang * lebar;
+                keliling = 2 * (panjang + lebar);
+                System.out.printf("%d %d", (int) luas, (int) keliling);
+                break;
 
             case "Segitiga":
-            int alas = s.nextInt();
-            int tinggi = s.nextInt();
-            double luasSegitiga =Math.round (0.5f * alas * tinggi);
-            double sisiMiring = Math.sqrt(alas * alas + tinggi * tinggi);
-            double kelilingSegitiga = Math.round(alas + tinggi + sisiMiring);
-            System.out.print((int)luasSegitiga + " " + (int)kelilingSegitiga);
-            break;
+                int alas = input.nextInt();
+                int tinggi = input.nextInt();
+                luas = 0.5 * alas * tinggi;
+                double miring = Math.sqrt(alas * alas + tinggi * tinggi);
+                keliling = alas + tinggi + Math.round(miring);
+                System.out.printf("%d %d", (int) luas, (int) keliling);
+                break;
 
             case "Lingkaran":
-            float diameter = s.nextFloat();
-            float jariJari = diameter / 2;
-            double luasLingkaran = 3.14 * jariJari * jariJari;
-            double kelilingLingkaran = 3.14 * diameter;
-            System.out.printf("%.2f", luasLingkaran);
-            System.out.printf(" " + "%.2f\n", kelilingLingkaran);
-            break;
+                int diameter = input.nextInt();
+                double r = diameter / 2.0;
+                luas = 3.14 * r * r;
+                keliling = 3.14 * diameter;
+                System.out.printf("%.2f %.2f", luas, keliling);
+                break;
         }
-
-    }
+}
 }

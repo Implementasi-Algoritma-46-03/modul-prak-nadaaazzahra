@@ -3,21 +3,18 @@ import java.util.Scanner;
 public class TP02 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner (System.in);
-        
-        //input
-        String Nama = input.next();
-        int  Jumlah = input.nextInt();
-        int   Harga = input.nextInt();
+        // Kerjakan soalnya di sini
+         Scanner input = new Scanner(System.in);
 
-        //proses
-        int   Total = Jumlah * Harga;
+         String nama = input.next();
+         int jumlah = input.nextInt();
+         int harga = input.nextInt();
 
-        //output
-        System.out.println("Hi, " + Nama + ". Total belanja adalah " + Total + " rupiah.");
+         int total = harga * jumlah;
 
-        //tutup Scanner
-        input.close();
+        // Output 
+         System.out.println("Hai " + nama + ". Total belanja adalah " + total + " rupiah");
+
+         input.close();
     }
-    }
-
+}

@@ -3,17 +3,16 @@ import java.util.Scanner;
 public class TP01 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner (System.in);
-
-        //input 
+        // Kerjakan soalnya di sini
+        Scanner input = new Scanner(System.in);
         int x = input.nextInt();
         int y = input.nextInt();
-        int n = input.nextInt();
+        int z = input.nextInt();
+        int total = x + (y * z);
 
-        //proses
-        int total = x + (y * n);
-
-        //output
+        // Output 
         System.out.println(total);
+
+        input.close();
     }
 }

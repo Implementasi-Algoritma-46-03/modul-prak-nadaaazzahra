@@ -3,21 +3,21 @@ import java.util.Scanner;
 public class TP03 {
 
     public static void main(final String[] args) {
+        // Kerjakan soalnya di sini
         Scanner input = new Scanner(System.in);
 
-        //input
-        int N = input.nextInt();
-        int T = input.nextInt();
+        int n = input.nextInt();
+        int t = input.nextInt();
 
-        //proses
-        int perOrang = N / (T + 1);
-        int sisa     = N % (T + 1);
+        int totalOrang = t + 1;
 
-        //output
-        System.out.println(perOrang);
+        int jatah = n / totalOrang;
+        int sisa = n % totalOrang;
+
+        // Output       
+        System.out.println(jatah);
         System.out.println(sisa);
 
-        //tutup Scanner
         input.close();
     }
 }

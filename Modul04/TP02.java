@@ -3,26 +3,32 @@ import java.util.Scanner;
 public class TP02 {
 
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);
+        // Kerjakan soalnya di sini
+         Scanner input = new Scanner(System.in);
+        
+        double transaksi = input.nextDouble();
+        double diskon = 0;
 
-        int n = s.nextInt();
-
-        int diskon = 0;
-        if (n > 200000) {
-            diskon = n * 5 / 100;
+        if (transaksi > 200000) {
+            diskon = transaksi * 0.05;
         }
 
-        float Total = n - diskon;
-        float Ppn  = (Total * 0.11f);
-        float TotalBayar = (Total + Ppn);
+        double total = transaksi - diskon;
+        double pajak = total * 0.11;
+        double totalBayar = total + pajak;
+        
+        int transaksiInt = (int) transaksi;
+        int diskonInt = (int) diskon;
 
-        System.out.println("Transaksi =" + " " + n);
+        System.out.println("Transaksi = " + transaksiInt);
+
         if (diskon > 0) {
-            System.out.println("Total =" + " " + n + " " + "-" + " " + diskon);
-        } else{
-            System.out.println("Total =" + " " + n);
+            System.out.println("Total = " + transaksiInt + " - " + diskonInt);
+        } else {
+            System.out.println("Total = " + transaksiInt);
         }
-        System.out.println("Ppn 11% =" + " " + Ppn);
-        System.out.println("Total dibayar =" + " " + TotalBayar);
+
+        System.out.println("Ppn 11% = " + pajak);
+        System.out.println("Total dibayar = " + totalBayar);
     }
 }
