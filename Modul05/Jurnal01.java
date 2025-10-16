@@ -9,7 +9,8 @@ public static void main(final String[] args) {
         String menu = "";
         int harga = 0;
         switch (kodeMenu){
-            case 1:
+            case 1: 
+            
             menu = "Nasi Goreng";
             harga = 15000 / 1000;
             break;
