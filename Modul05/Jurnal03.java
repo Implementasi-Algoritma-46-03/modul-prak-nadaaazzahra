@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Jurnal03 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
         Scanner s = new Scanner(System.in);
         int a = s.nextInt();
         char o = s.next().charAt(0);

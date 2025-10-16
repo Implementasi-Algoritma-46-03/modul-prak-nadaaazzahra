@@ -1,39 +1,40 @@
 import java.util.Scanner;
 
 public class TP02 {
-   public TP02() {
-   }
 
-   public static void main(String[] var0) {
-      Scanner var1 = new Scanner(System.in);
-      System.out.print("Masukkan jumlah hari setelah Jumat: ");
-      int var2 = var1.nextInt();
-      int var3 = var2 % 7;
-      switch (var3) {
-         case 0:
-            System.out.println("vendredi");
-            break;
-         case 1:
-            System.out.println("samedi");
-            break;
-         case 2:
-            System.out.println("dimanche");
-            break;
-         case 3:
-            System.out.println("lundi");
-            break;
-         case 4:
-            System.out.println("mardi");
-            break;
-         case 5:
-            System.out.println("mercredi");
-            break;
-         case 6:
-            System.out.println("jeudi");
-            break;
-         default:
-            System.out.println("Input tidak valid!");
-      }
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
 
-   }
+        int bilBut = s.nextInt();
+        int hari = 5;
+
+        int hariKedepan = (hari + bilBut) % 7;
+        if (hariKedepan==0) hariKedepan = 7;
+        
+        String hariPrancis = "";
+
+        switch (hariKedepan){
+            case 1 : 
+            hariPrancis = "lundi";break;
+
+            case 2 :
+            hariPrancis = "mardi";break;
+
+            case 3:
+            hariPrancis = "mercredi";break;
+
+            case 4:
+            hariPrancis = "jeudi";break;
+
+            case 5:
+            hariPrancis = "vendredi";break;
+
+            case 6:
+            hariPrancis = "samedi";break;
+
+            case 7:
+            hariPrancis = "dimanche";break;
+        }
+        System.out.println(hariPrancis);
+    }
 }

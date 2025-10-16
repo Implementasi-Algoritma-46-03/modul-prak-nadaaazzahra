@@ -1,59 +1,48 @@
 import java.util.Scanner;
+
 public class TP03 {
+
     public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+        String bangunan = s.nextLine();
+        
 
-        System.out.print("Masukkan nama bangun datar: ");
-        String bangunDatar = scanner.nextLine().toLowerCase();
 
-        double luas = 0;
-        double keliling = 0;
+        switch (bangunan){
+            case "Persegi":
+            int sisi = s.nextInt();
+            int kelilingPersegi = 4 * sisi;
+            int luasPersegi = sisi * sisi;
+            System.out.print(luasPersegi);
+            System.out.println(" " + kelilingPersegi);break;
 
-        switch(bangunDatar) {
+            case "Persegi Panjang":
+            int panjang = s.nextInt();
+            int lebar = s.nextInt();
+            int kelilingPersegiP = 2 * (panjang + lebar);
+            int luasPersegiP = panjang * lebar;
+            System.out.print(luasPersegiP);
+            System.out.println(" " + kelilingPersegiP);break;
 
-            case "persegi":
-                System.out.print("Masukkan sisi: ");
-                double sisi = scanner.nextDouble();
-                luas = sisi * sisi;
-                keliling = 4 * sisi;
-                System.out.println((int)luas + " " + (int)keliling);
-                break;
+            case "Segitiga":
+            int alas = s.nextInt();
+            int tinggi = s.nextInt();
+            double luasSegitiga =Math.round (0.5f * alas * tinggi);
+            double sisiMiring = Math.sqrt(alas * alas + tinggi * tinggi);
+            double kelilingSegitiga = Math.round(alas + tinggi + sisiMiring);
+            System.out.print((int)luasSegitiga + " " + (int)kelilingSegitiga);
+            break;
 
-            case "persegi panjang":
-                System.out.print("Masukkan panjang: ");
-                double panjang = scanner.nextDouble();
-                System.out.print("Masukkan lebar: ");
-                double lebar = scanner.nextDouble();
-                luas = panjang * lebar;
-                keliling = 2 * (panjang + lebar);
-                System.out.println((int)luas + " " + (int)keliling);
-                break;
-
-            case "segitiga":
-                System.out.print("Masukkan alas: ");
-                double alas = scanner.nextDouble();
-                System.out.print("Masukkan tinggi: ");
-                double tinggi = scanner.nextDouble();
-                luas = 0.5 * alas * tinggi;
-                double sisiMiring = Math.sqrt((alas * alas) + (tinggi * tinggi));
-                keliling = alas + tinggi + sisiMiring;
-                System.out.println((int)luas + " " + (int)keliling);
-                break;
-
-            case "lingkaran":
-                System.out.print("Masukkan diameter: ");
-                double diameter = scanner.nextDouble();
-                double jariJari = diameter / 2;
-                luas = 3.14 * jariJari * jariJari;
-                keliling = 3.14 * diameter;
-                System.out.printf("%.2f %.2f\n", luas, keliling);
-                break;
-
-            default:
-                System.out.println("Bangun datar tidak dikenali!");
-                break;
+            case "Lingkaran":
+            float diameter = s.nextFloat();
+            float jariJari = diameter / 2;
+            double luasLingkaran = 3.14 * jariJari * jariJari;
+            double kelilingLingkaran = 3.14 * diameter;
+            System.out.printf("%.2f", luasLingkaran);
+            System.out.printf(" " + "%.2f\n", kelilingLingkaran);
+            break;
         }
+
     }
 }
-

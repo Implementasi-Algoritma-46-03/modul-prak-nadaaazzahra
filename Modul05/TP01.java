@@ -1,65 +1,50 @@
 import java.util.Scanner;
+
 public class TP01 {
 
     public static void main(final String[] args) {
-       Scanner scanner = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
-        System.out.print("Masukkan nama bulan (januari - desember): ");
-        String bulan = scanner.nextLine().toLowerCase();
+        String bulan = s.nextLine();
 
-        switch(bulan) {
-
+        String prancis = "";
+        switch (bulan){
             case "januari":
-                System.out.println("janvier");
-                break;
+            prancis = "janvier";break;
 
             case "februari":
-                System.out.println("fevrier");
-                break;
+            prancis = "fevrier";break;
 
             case "maret":
-                System.out.println("mars");
-                break;
+            prancis = "mars";break;
 
             case "april":
-                System.out.println("avril");
-                break;
+            prancis = "avril";break;
 
             case "mei":
-                System.out.println("mai");
-                break;
+            prancis = "mai";break;
 
             case "juni":
-                System.out.println("juin");
-                break;
+            prancis = "juin";break;
 
             case "juli":
-                System.out.println("juillet");
-                break;
+            prancis = "juillet";break;
 
             case "agustus":
-                System.out.println("aout");
-                break;
+            prancis = "aout";break;
 
             case "september":
-                System.out.println("septembre");
-                break;
+            prancis = "septembre";break;
 
             case "oktober":
-                System.out.println("octobre");
-                break;
+            prancis = "oktobre";break;
 
             case "november":
-                System.out.println("novembre");
-                break;
+            prancis = "novembre";break;
 
             case "desember":
-                System.out.println("decembre");
-                break;
-
-            default:
-                System.out.println("Bulan tidak dikenali");
-                break;
+            prancis = "decembre";break;
         }
+        System.out.println(prancis);
     }
 }
