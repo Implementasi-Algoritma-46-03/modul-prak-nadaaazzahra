@@ -2,22 +2,41 @@ import java.util.Scanner;
 
 public class TP01 {
 
-    public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
+    private static double toCelcius(double fahrenheit) {
+        return (5.0 / 9.0) * (fahrenheit - 32);
+    }
 
-        double R1 = input.nextDouble();
-        double R2 = input.nextDouble();
-        double R3 = input.nextDouble();
+    private static double toReamur(double fahrenheit) {
+        return (4.0 / 9.0) * (fahrenheit - 32);
+    }
 
-        double C1 = (R1 - 32) * 5 / 9;
-        double C2 = (R2 - 32) * 5 / 9;
-        double C3 = (R3 - 32) * 5 / 9;
+    private static void printResultC(double fahrenheit) {
+        double hasilCelcius = toCelcius(fahrenheit);
+        System.out.printf("%.1f", hasilCelcius);
+    }
+    private static void printResultR(double fahrenheit) {
+        double hasilReamur = toReamur(fahrenheit);
+        System.out.printf("%.2f", hasilReamur);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double fahrenheit1 = scanner.nextDouble();
+        double fahrenheit2 = scanner.nextDouble();
+        double fahrenheit3 = scanner.nextDouble();
 
-        double Re1 = (R1 - 32) * 4 / 9;
-        double Re2 = (R2 - 32) * 4 / 9;
-        double Re3 = (R3 - 32) * 4 / 9;
-        
-         System.out.printf("%.2f %.2f %.2f%n", C1, C2, C3);
-        System.out.printf("%.2f %.2f %.2f%n", Re1, Re2, Re3);
+        System.out.print("Celcius: ");
+        printResultC(fahrenheit1);
+        System.out.print(" ");
+        printResultC(fahrenheit2);
+        System.out.print(" ");
+        printResultC(fahrenheit3);
+        System.out.print("\n");
+        System.out.print("Reamur: ");
+        printResultR(fahrenheit1);
+        System.out.print(" ");
+        printResultR(fahrenheit2);
+        System.out.print(" ");
+        printResultR(fahrenheit3);
+        scanner.close();
     }
 }
