@@ -13,7 +13,7 @@ public class Jurnal01 {
 
         }
         private static void greeting(String nama,int waktu){
-            System.out.print("Halo," + nama);
+            System.out.print("Halo, " + nama);
             if (waktu >= 6 && waktu <= 11){
             System.out.println(". Selamat pagi.");  
             } else if (waktu >= 12 && waktu <= 14){
