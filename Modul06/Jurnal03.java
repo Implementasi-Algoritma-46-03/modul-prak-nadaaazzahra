@@ -15,7 +15,7 @@ public class Jurnal03 {
         System.out.printf("%.2f %.2f %.1f%%", volumeMaks, volumeAir, persen);
     }
     private static double hitungVolume(double r, double tinggi) {
-        return 3.14156 * r * r * tinggi;
+        return 3.14159 * r * r * tinggi;
     }
     private static double hitungPersen(double t, double h) {
         return (t / h) * 100;
