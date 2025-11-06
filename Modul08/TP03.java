@@ -4,8 +4,8 @@ public class TP03 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int total = 0;q   // menyimpan total risoles
-        int jumlah;      // untuk menyimpan input sementara
+        int total = 0;    // menyimpan total risoles
+        int jumlah;       // untuk menyimpan input sementara
 
         jumlah = input.nextInt(); // baca angka pertama
 
@@ -17,3 +17,4 @@ public class TP03 {
         System.out.println(total); // tampilkan total akhir
     }
 }
+
