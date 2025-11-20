@@ -10,5 +10,14 @@ public class TP02 {
             }
             System.out.println(i);
         }
+
+        for (int i = n - 1; i >= 1; i--) {
+            // spasi
+            for (int j = 1; j < i; j++) {
+                System.out.print(" ");
+            }
+            // angka
+            System.out.println(i);
+        }
     }
 }
