@@ -17,7 +17,7 @@ public class Jurnal01 {
 
         for (int i = 0; i < nama.size(); i++){
 
-            System.out.println("Bulan" + (i + 1) + ": " + nama.get(i));
+            System.out.println("Bulan " + (i + 1) + ": " + nama.get(i));
         }
     }
 }
