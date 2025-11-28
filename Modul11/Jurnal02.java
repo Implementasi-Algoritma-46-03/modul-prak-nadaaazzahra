@@ -1,6 +1,13 @@
+import java.util.Scanner;
 public class Jurnal02 {
 
     public static void main(final String[] args) {
-        // Kerjakan soalnya di sini
+        Scanner s = new Scanner(System.in);
+
+        String input = s.nextLine();
+        String[] arr = input.split("\\s+");
+        String hasil = String.join(" ",arr);
+        
+        System.out.println(hasil);
     }
 }
