@@ -1,50 +1,61 @@
-import java.util.Scanner;
+import java.util.Scanner; // Untuk membaca input
 
 public class Jurnal03 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int[][] spiral = new int[n][n];
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
+        int N = s.nextInt(); // Input ukuran matriks NxN
 
-        int angka = 1;
-        int top = 0, bottom = n - 1;
-        int left = 0, right = n - 1;
+        int mulai = 0;   // batas kiri & atas
+        int counter = 0; // angka yang akan diisi (1,2,3,...)
+        int akhir = N;   // batas kanan & bawah
+        int loop = 0;    // offset setiap putaran spiral
 
-        while (angka <= n * n) {
+        int[][] matriks = new int[N][N]; // membuat array 2D NxN
 
-          
-            for (int i = top; i <= bottom; i++) {
-                spiral[i][left] = angka++;
+        // Mengisi matriks dalam bentuk spiral
+        while (akhir > 0) {
+
+            // 1) Mengisi kolom kiri dari atas ke bawah
+            for (int i = mulai; i < akhir; i++) {
+                counter++;
+                matriks[i + loop][mulai + loop] = counter;
             }
-            left++;
 
-        
-            for (int j = left; j <= right; j++) {
-                spiral[bottom][j] = angka++;
-            }
-            bottom--;
+            akhir--; // batas bawah naik ke atas
 
-            
-            for (int i = bottom; i >= top; i--) {
-                spiral[i][right] = angka++;
+            // 2) Mengisi baris bawah dari kiri ke kanan
+            for (int i = mulai; i < akhir; i++) {
+                counter++;
+                matriks[akhir + loop][i + 1 + loop] = counter;
             }
-            right--;
 
-            
-            for (int j = right; j >= left; j--) {
-                spiral[top][j] = angka++;
+            // 3) Mengisi kolom kanan dari bawah ke atas
+            for (int i = mulai; i < akhir; i++) {
+                counter++;
+                matriks[akhir - i - 1 + loop][akhir + loop] = counter;
             }
-            top++;
+
+            akhir--; // mempersempit lingkaran spiral
+
+            // 4) Mengisi baris atas dari kanan ke kiri
+            for (int i = mulai; i < akhir; i++) {
+                counter++;
+                matriks[mulai + loop][akhir - i + loop] = counter;
+            }
+
+            loop++; // berpindah ke "lingkaran spiral" berikutnya
         }
 
-        
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(spiral[i][j]);
-                if (j < n - 1) System.out.print(" ");
+        // Menampilkan matriks
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(matriks[i][j]);
+
+                if (j < N - 1)
+                    System.out.print(" "); // spasi antar kolom
             }
-            if (i < n - 1) System.out.println();
+            System.out.println();
         }
     }
 }
